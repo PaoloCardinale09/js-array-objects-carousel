@@ -43,14 +43,16 @@ const images = [
     text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
   },
 ];
-
+// PRENDO GLI ELEMENTI DEL DOM
 const slidesContainerEl = document.querySelector(".items");
 const buttonNextEl = document.querySelector(".next");
 const buttonPrevEl = document.querySelector(".prev");
 
+// DICHIARO VARIABILI PER FAR SI CHE "ON LOAD" L'IMMAGINE DEL CAROSELLO NON è VUOTA
 let activeImage = 0;
 let contatore = 0;
 
+// CICLO FOR EACH PER CICLARE TUTTI GLI OGGETTI
 images.forEach((element) => {
   const currentImage = element.image;
   const currentTitle = element.title;
@@ -61,16 +63,17 @@ images.forEach((element) => {
   if (contatore == activeImage) {
     slideClasses += " active";
   }
+
+  //   CREO COSTANTE CON STRINGA DA AGGIUNGERE AL DOM
   const slide = `
       <div class="${slideClasses}">
           <img src="${currentImage}" alt="">
           <p id="title-absolute" class="h2"> ${currentTitle}</p>
           <p id="text-absolute"> ${currentText}</p>
       </div>
-     
-
       `;
 
+  // AGGIUNGO AL DOM
   slidesContainerEl.innerHTML += slide;
   contatore++;
 });
