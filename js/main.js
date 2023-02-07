@@ -49,21 +49,30 @@ const buttonNextEl = document.querySelector(".next");
 const buttonPrevEl = document.querySelector(".prev");
 
 let activeImage = 0;
+let contatore = 0;
 
 images.forEach((element) => {
   const currentImage = element.image;
+  const currentTitle = element.title;
+  const currentText = element.text;
+
   const title = element.title;
   let slideClasses = "item";
-  if (currentImage == activeImage) {
+  if (contatore == activeImage) {
     slideClasses += " active";
   }
-
   const slide = `
       <div class="${slideClasses}">
           <img src="${currentImage}" alt="">
-      </div>`;
+          <p id="title-absolute" class="h2"> ${currentTitle}</p>
+          <p id="text-absolute"> ${currentText}</p>
+      </div>
+     
+
+      `;
 
   slidesContainerEl.innerHTML += slide;
+  contatore++;
 });
 
 /***********************************************
