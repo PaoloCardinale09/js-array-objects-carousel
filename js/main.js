@@ -52,6 +52,7 @@ let activeImage = 0;
 
 images.forEach((element) => {
   const currentImage = element.image;
+  const title = element.title;
   let slideClasses = "item";
   if (currentImage == activeImage) {
     slideClasses += " active";
@@ -64,14 +65,6 @@ images.forEach((element) => {
 
   slidesContainerEl.innerHTML += slide;
 });
-
-// for (let i = 0; i < images.length; i++) {
-//   const currentImage = images[i];
-
-//   let slideClasses = "item";
-//   if (i == activeImage) {
-//     slideClasses += " active";
-//   }
 
 /***********************************************
  ON CLICK DEL TASTO PREV
